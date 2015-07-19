@@ -1,0 +1,1075 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0B381461-DB63-4273-8F00-370A53089871}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProxySearch.Console</RootNamespace>
+    <AssemblyName>ProxySearch.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\world128x128.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPFToolkit.Extended, Version=1.8.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WPFToolkit.Extended\WPFToolkit.Extended.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Code\Converters\ListToEmptyPanelVisibilityConverter.cs" />
+    <Compile Include="Code\Detectable\ProxyCheckers\SimpleProxyCheckerDetectableBase.cs" />
+    <Compile Include="Code\ProxyClients\Opera\HttpOperaClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\ProxyClients\Opera\IniFile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\ProxyClients\Opera\OperaClientBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\ProxyClients\Opera\SocksOperaClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\Settings\MainWindowState.cs" />
+    <Compile Include="Controls\ActiveProxyClientControl.xaml.cs">
+      <DependentUpon>ActiveProxyClientControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CaptchaWindow.xaml.cs">
+      <DependentUpon>CaptchaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Code\ApplicationInitializer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\Constants.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\Context.cs" />
+    <Compile Include="Code\ControlNavigator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\Converters\AccuracyConverter.cs" />
+    <Compile Include="Code\Converters\AndMultiConverter.cs" />
+    <Compile Include="Code\Converters\BandwidthResultColorConverter.cs" />
+    <Compile Include="Code\Converters\BandwidthResultTooltipConverter.cs" />
+    <Compile Include="Code\Converters\BandwidthStateVisibilityConverter.cs" />
+    <Compile Include="Code\Converters\BandwidthResultTextConverter.cs" />
+    <Compile Include="Code\Converters\BoolInverterConverter.cs" />
+    <Compile Include="Code\Converters\CenterConverter.cs" />
+    <Compile Include="Code\Converters\CountryDescriptionMultiConverter.cs" />
+    <Compile Include="Code\Converters\CountryNameMultiConverter.cs" />
+    <Compile Include="Code\Converters\DeleteButtonVisibilityConverter.cs" />
+    <Compile Include="Code\Converters\FilteringButtonIsCheckedConverter.cs" />
+    <Compile Include="Code\Converters\FilteringPopupIsCheckedMultiConverter.cs" />
+    <Compile Include="Code\Converters\GripAlignmentConverter.cs" />
+    <Compile Include="Code\Converters\GripCursorConverter.cs" />
+    <Compile Include="Code\Converters\GripRotationConverter.cs" />
+    <Compile Include="Code\Converters\HttpProxyTypeToStringConverter.cs" />
+    <Compile Include="Code\Converters\IncrementConverter.cs" />
+    <Compile Include="Code\Converters\IntToVisibilityConverter.cs" />
+    <Compile Include="Code\Converters\IPAdressDescriptionMultiConverter.cs" />
+    <Compile Include="Code\Converters\PageCountMultiConverter.cs" />
+    <Compile Include="Code\Converters\PagingButtonEnabledMultiConverter.cs" />
+    <Compile Include="Code\Converters\PagingEnabledConverter.cs" />
+    <Compile Include="Code\Converters\RowBackgroundColorConverter.cs" />
+    <Compile Include="Code\Converters\SizeToAngleConverter.cs" />
+    <Compile Include="Code\Converters\StringToIsEnableConverter.cs" />
+    <Compile Include="Code\Converters\TaskStatusToColorConverter.cs" />
+    <Compile Include="Code\Converters\TextIndexToStringConverter.cs" />
+    <Compile Include="Code\Converters\UrlPathConverter.cs" />
+    <Compile Include="Code\Converters\ValueToColorConverter.cs" />
+    <Compile Include="Code\DetectableManager.cs" />
+    <Compile Include="Code\Detectable\DetectableBase.cs" />
+    <Compile Include="Code\Detectable\GeoIPs\DummyGeoIPDetectable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\Detectable\GeoIPs\BuildInGeoIPDetectable.cs" />
+    <Compile Include="Code\Detectable\GeoIPs\GeoIPDetectable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\Detectable\ProxyCheckers\CheckerByUrlAndKeywordDetectableBase.cs" />
+    <Compile Include="Code\Detectable\ProxyCheckers\CheckerByUrlDetectableBase.cs" />
+    <Compile Include="Code\Detectable\ProxyCheckers\HttpCheckerByUrlAndKeywordsDetectable.cs" />
+    <Compile Include="Code\Detectable\ProxyCheckers\HttpCheckerByUrlDetectable.cs" />
+    <Compile Include="Code\Detectable\ProxyCheckers\HttpSimpleProxyCheckerDetectable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\Detectable\ProxyCheckers\SocksCheckerByUrlAndKeywordDetectable.cs" />
+    <Compile Include="Code\Detectable\ProxyCheckers\SocksSimpleProxyCheckerDetectable.cs" />
+    <Compile Include="Code\Detectable\ProxyCheckers\HttpTurnedOffProxyCheckerDetectable.cs" />
+    <Compile Include="Code\Detectable\ProxyCheckers\SocksTurnedOffProxyCheckerDetectable.cs" />
+    <Compile Include="Code\Detectable\ProxyType\HttpProxyTypeDetectable.cs" />
+    <Compile Include="Code\Detectable\ProxyType\SocksProxyTypeDetectable.cs" />
+    <Compile Include="Code\Detectable\SearchEngines\SocksParallelSearchEngineDetectable.cs" />
+    <Compile Include="Code\Detectable\SearchEngines\HttpParallelSearchEngineDetectable.cs" />
+    <Compile Include="Code\Detectable\SearchEngines\ParallelSearchEngineDetectableBase.cs" />
+    <Compile Include="Code\Detectable\SearchEngines\SocksFolderSearchEngineDetectable.cs" />
+    <Compile Include="Code\Detectable\SearchEngines\SocksGoogleEngineDetectable.cs" />
+    <Compile Include="Code\Detectable\SearchEngines\HttpFolderSearchEngineDetectable.cs" />
+    <Compile Include="Code\Detectable\SearchEngines\GoogleEngineDetectableBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\Detectable\SearchEngines\HttpGoogleEngineDetectable.cs" />
+    <Compile Include="Code\Detectable\ProxyCheckers\SocksCheckerByUrlDetectable.cs" />
+    <Compile Include="Code\Detectable\SearchEngines\HttpUrlListSearchEngineDetectable.cs" />
+    <Compile Include="Code\Detectable\SearchEngines\SocksUrlListSearchEngineDetectable.cs" />
+    <Compile Include="Code\Detectable\SimpleDetectableBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\Detectable\SearchEngines\UrlListSearchEngineDetectableBase.cs" />
+    <Compile Include="Code\EventLog\ExceptionLogging.cs" />
+    <Compile Include="Code\EventLog\IExceptionLogging.cs" />
+    <Compile Include="Code\Extensions\ActionExtensions.cs" />
+    <Compile Include="Code\Filters\FilterData.cs" />
+    <Compile Include="Code\GoogleAnalytics\Buttons.cs" />
+    <Compile Include="Code\GoogleAnalytics\EventType.cs" />
+    <Compile Include="Code\GoogleAnalytics\GAResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GAResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Code\GoogleAnalytics\GoogleAnalyticsManager.cs" />
+    <Compile Include="Code\GoogleAnalytics\HitTypes.cs" />
+    <Compile Include="Code\GoogleAnalytics\Timing\TimingCategory.cs" />
+    <Compile Include="Code\GoogleAnalytics\Timing\TimingDictionaryKey.cs" />
+    <Compile Include="Code\GoogleAnalytics\Timing\TimingVariable.cs" />
+    <Compile Include="Code\Interfaces\IDetectableManager.cs" />
+    <Compile Include="Code\Interfaces\IGA.cs" />
+    <Compile Include="Code\Interfaces\ISettingsTabNavigator.cs" />
+    <Compile Include="Code\Language\Language.cs" />
+    <Compile Include="Code\Language\LanguageManager.cs" />
+    <Compile Include="Code\SearchEngines\ParallelSearchEngine.cs" />
+    <Compile Include="Code\SearchResult\FilterDataComparer.cs" />
+    <Compile Include="Code\Settings\RegistrySettings.cs" />
+    <Compile Include="Code\UI\AdvancedTabSettings.cs" />
+    <Compile Include="Code\UI\HttpProxyTypesView.cs" />
+    <Compile Include="Code\UI\MixedSearchEngineDataView.cs" />
+    <Compile Include="Code\Utils\Property.cs" />
+    <Compile Include="Code\Extensions\RegexExtensions.cs" />
+    <Compile Include="Code\GeoIPServiceAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\Interfaces\IActionInvoker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\Interfaces\IBlackListManager.cs" />
+    <Compile Include="Code\Interfaces\IControlNavigator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\Interfaces\IDetectable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\Interfaces\IMessageBox.cs" />
+    <Compile Include="Code\Interfaces\IProxyClient.cs" />
+    <Compile Include="Code\Interfaces\IProxyClientSearcher.cs" />
+    <Compile Include="Code\Interfaces\IProxyType.cs" />
+    <Compile Include="Code\Interfaces\ISearchControl.cs" />
+    <Compile Include="Code\Interfaces\ISearchResult.cs" />
+    <Compile Include="Code\Interfaces\IUsedProxies.cs" />
+    <Compile Include="Code\Interfaces\IVersionProvider.cs" />
+    <Compile Include="Code\ProxyClients\BrowserClient.cs" />
+    <Compile Include="Code\ProxyClients\Chrome\HttpChromeClient.cs" />
+    <Compile Include="Code\ProxyClients\Chrome\SocksChromeClient.cs" />
+    <Compile Include="Code\ProxyClients\Firefox\SocksFirefoxClient.cs" />
+    <Compile Include="Code\ProxyClients\Firefox\FirefoxClientBase.cs" />
+    <Compile Include="Code\ProxyClients\Firefox\HttpFirefoxClient.cs" />
+    <Compile Include="Code\ProxyClients\InternetExplorer\HttpInternetExplorerClient.cs" />
+    <Compile Include="Code\ProxyClients\InternetExplorer\InternetExplorerClientBase.cs" />
+    <Compile Include="Code\ProxyClients\InternetExplorer\SocksInternetExplorerClient.cs" />
+    <Compile Include="Code\ProxyClients\InternetExplorer\WinInet\INTERNET_OPTION.cs" />
+    <Compile Include="Code\ProxyClients\InternetExplorer\WinInet\INTERNET_PER_CONN_OPTION.cs" />
+    <Compile Include="Code\ProxyClients\InternetExplorer\WinInet\INTERNET_PER_CONN_OPTION_LIST.cs" />
+    <Compile Include="Code\ProxyClients\InternetExplorer\WinInet\WinINet.cs" />
+    <Compile Include="Code\ProxyClients\ProxyClientBase.cs" />
+    <Compile Include="Code\ProxyClients\ProxyClientSearcher.cs" />
+    <Compile Include="Code\ProxyClients\RestartableBrowserClient.cs" />
+    <Compile Include="Code\ProxySearchEngineApplicationFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\ProxySearchFeedback.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\ProxyType\HttpProxyType.cs" />
+    <Compile Include="Code\ProxyType\ProxyTypeBase.cs" />
+    <Compile Include="Code\ProxyType\SocksProxyType.cs" />
+    <Compile Include="Code\SearchResult\ProxyInfoComparer.cs" />
+    <Compile Include="Code\SearchResult\PreventChangeSortingDirection.cs" />
+    <Compile Include="Code\Serializer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\Settings\AddressPortPair.cs" />
+    <Compile Include="Code\Settings\AllSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\Settings\DefaultSettingsFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\Settings\ExportSettings.cs" />
+    <Compile Include="Code\Settings\ParametersPair.cs" />
+    <Compile Include="Code\Settings\TabSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\Settings\ProxyList.cs" />
+    <Compile Include="Code\Settings\ProxyStorage.cs" />
+    <Compile Include="Code\UI\DummyTabSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Code\UI\GeneralTabSettings.cs" />
+    <Compile Include="Code\UI\MessageBoxWrapper.cs" />
+    <Compile Include="Code\UI\RowStyles.cs" />
+    <Compile Include="Code\Version\VersionProvider.cs" />
+    <Compile Include="Code\Version\VersionManager.cs" />
+    <Compile Include="Controls\AboutControl.xaml.cs">
+      <DependentUpon>AboutControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdvancedTabControl.xaml.cs">
+      <DependentUpon>AdvancedTabControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdvertisingControl.xaml.cs">
+      <DependentUpon>AdvertisingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BackControl.xaml.cs">
+      <DependentUpon>BackControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BandwidthControl.xaml.cs">
+      <DependentUpon>BandwidthControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CheckerByIpAndPortControl.xaml.cs">
+      <DependentUpon>CheckerByIpAndPortControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CheckerByUrlAndKeywordsControl.xaml.cs">
+      <DependentUpon>CheckerByUrlAndKeywordsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataGridHeaderFilteringControl.xaml.cs">
+      <DependentUpon>DataGridHeaderFilteringControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataGridHelpControl.xaml.cs">
+      <DependentUpon>DataGridHelpControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DetectableSelectorControl.xaml.cs">
+      <DependentUpon>DetectableSelectorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ExportSearchResultControl.xaml.cs">
+      <DependentUpon>ExportSearchResultControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FilteringButtonControl.xaml.cs">
+      <DependentUpon>FilteringButtonControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FilteringPopupControl.xaml.cs">
+      <DependentUpon>FilteringPopupControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FolderSearchEngineControl.xaml.cs">
+      <DependentUpon>FolderSearchEngineControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GoogleEnginePropertyControl.xaml.cs">
+      <DependentUpon>GoogleEnginePropertyControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ParallelSearchEnginePropertyControl.xaml.cs">
+      <DependentUpon>ParallelSearchEnginePropertyControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ParseMethodEditor.xaml.cs">
+      <DependentUpon>ParseMethodEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProxyDetailsControl.xaml.cs">
+      <DependentUpon>ProxyDetailsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PagingControl.xaml.cs">
+      <DependentUpon>PagingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProxyCheckerByUrlControl.xaml.cs">
+      <DependentUpon>ProxyCheckerByUrlControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProxyClientControl.xaml.cs">
+      <DependentUpon>ProxyClientControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProxyClientsControl.xaml.cs">
+      <DependentUpon>ProxyClientsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Code\UI\ResizeDirection.cs" />
+    <Compile Include="Controls\ResizeControl.xaml.cs">
+      <DependentUpon>ResizeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Resources\AboutControl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AboutControl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Resources\ActionInvokerControl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActionInvokerControl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Resources\AdvancedTabControl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdvancedTabControl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Resources\AdvertisingControl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdvertisingControl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Resources\BackControl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BackControl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Resources\BandwidthControl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BandwidthControl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Resources\CheckerByUrlAndKeywordsControl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckerByUrlAndKeywordsControl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Resources\DownloadNewVersion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DownloadNewVersion.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Resources\ExportSearchResultControl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExportSearchResultControl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Resources\FolderSearchEngineControl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FolderSearchEngineControl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Resources\GoogleEnginePropertyControl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GoogleEnginePropertyControl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Resources\ParallelSearchEnginePropertyControl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ParallelSearchEnginePropertyControl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Resources\ParseMethodEditor.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ParseMethodEditor.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Resources\ProxyCheckerByUrlControl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProxyCheckerByUrlControl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Resources\ProxyDetailsControl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProxyDetailsControl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Resources\SearchControl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchControl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Resources\SearchResult.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchResult.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Resources\SearchSpeedControl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SearchSpeedControl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Resources\SelectFolderControl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SelectFolderControl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Resources\TabNameControl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TabNameControl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Resources\TabSettingControl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TabSettingControl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Resources\TaskManagerControl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TaskManagerControl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Resources\ToolbarControl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToolbarControl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Resources\UrlListPropertyControl.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UrlListPropertyControl.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SearchResult.xaml.cs">
+      <DependentUpon>SearchResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SearchSpeedControl.xaml.cs">
+      <DependentUpon>SearchSpeedControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SelectFolderControl.xaml.cs">
+      <DependentUpon>SelectFolderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SettingsControl.xaml.cs">
+      <DependentUpon>SettingsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TabNameControl.xaml.cs">
+      <DependentUpon>TabNameControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TabSettingControl.xaml.cs">
+      <DependentUpon>TabSettingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TaskManagerControl.xaml.cs">
+      <DependentUpon>TaskManagerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ToolbarControl.xaml.cs">
+      <DependentUpon>ToolbarControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UrlListPropertyControl.xaml.cs">
+      <DependentUpon>UrlListPropertyControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\WatermarkControl.xaml.cs">
+      <DependentUpon>WatermarkControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadNewVersion.xaml.cs">
+      <DependentUpon>DownloadNewVersion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\GeoIPService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Page Include="Controls\ActiveProxyClientControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CaptchaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\AboutControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ActionInvokerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\AdvancedTabControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\AdvertisingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BackControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BandwidthControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CheckerByIpAndPortControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CheckerByUrlAndKeywordsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DataGridHeaderFilteringControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DataGridHelpControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\DetectableSelectorControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ExportSearchResultControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\FilteringButtonControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\FilteringPopupControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\FolderSearchEngineControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\GoogleEnginePropertyControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ParallelSearchEnginePropertyControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ParseMethodEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ProxyDetailsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\PagingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ProxyCheckerByUrlControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ProxyClientControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ProxyClientsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ResizeControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SearchControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SearchResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SearchSpeedControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SelectFolderControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SettingsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TabNameControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TabSettingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TaskManagerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ToolbarControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\UrlListPropertyControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\WatermarkControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DownloadNewVersion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\ActionInvokerControl.xaml.cs">
+      <DependentUpon>ActionInvokerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SearchControl.xaml.cs">
+      <DependentUpon>SearchControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Styles\Button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\CheckBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ComboBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Common.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\DataGrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\DoubleUpDown.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Expander.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Grid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\IntegerUpDown.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Label.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ProgressBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\TabControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\TextBlock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\TextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ToggleButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Code\GoogleAnalytics\GAResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>GAResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\AboutControl.de.resx" />
+    <EmbeddedResource Include="Controls\Resources\AboutControl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AboutControl.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\AboutControl.ru.resx" />
+    <EmbeddedResource Include="Controls\Resources\ActionInvokerControl.de.resx" />
+    <EmbeddedResource Include="Controls\Resources\ActionInvokerControl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ActionInvokerControl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\ActionInvokerControl.ru.resx" />
+    <EmbeddedResource Include="Controls\Resources\AdvancedTabControl.de.resx" />
+    <EmbeddedResource Include="Controls\Resources\AdvancedTabControl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AdvancedTabControl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\AdvancedTabControl.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\AdvertisingControl.de.resx" />
+    <EmbeddedResource Include="Controls\Resources\AdvertisingControl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AdvertisingControl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\AdvertisingControl.ru.resx" />
+    <EmbeddedResource Include="Controls\Resources\AdvertisingControl.uk.resx" />
+    <EmbeddedResource Include="Controls\Resources\BackControl.de.resx" />
+    <EmbeddedResource Include="Controls\Resources\BackControl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BackControl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\BackControl.ru.resx" />
+    <EmbeddedResource Include="Controls\Resources\BandwidthControl.de.resx" />
+    <EmbeddedResource Include="Controls\Resources\BandwidthControl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>BandwidthControl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\BandwidthControl.ru.resx" />
+    <EmbeddedResource Include="Controls\Resources\CheckerByUrlAndKeywordsControl.de.resx" />
+    <EmbeddedResource Include="Controls\Resources\CheckerByUrlAndKeywordsControl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CheckerByUrlAndKeywordsControl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\CheckerByUrlAndKeywordsControl.ru.resx" />
+    <EmbeddedResource Include="Controls\Resources\AboutControl.uk.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\ActionInvokerControl.uk.resx" />
+    <EmbeddedResource Include="Controls\Resources\AdvancedTabControl.uk.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\BackControl.uk.resx" />
+    <EmbeddedResource Include="Controls\Resources\BandwidthControl.uk.resx" />
+    <EmbeddedResource Include="Controls\Resources\CheckerByUrlAndKeywordsControl.uk.resx" />
+    <EmbeddedResource Include="Controls\Resources\DownloadNewVersion.de.resx" />
+    <EmbeddedResource Include="Controls\Resources\DownloadNewVersion.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DownloadNewVersion.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\DownloadNewVersion.ru.resx" />
+    <EmbeddedResource Include="Controls\Resources\DownloadNewVersion.uk.resx" />
+    <EmbeddedResource Include="Controls\Resources\ExportSearchResultControl.de.resx" />
+    <EmbeddedResource Include="Controls\Resources\FolderSearchEngineControl.de.resx" />
+    <EmbeddedResource Include="Controls\Resources\GoogleEnginePropertyControl.de.resx" />
+    <EmbeddedResource Include="Controls\Resources\ParallelSearchEnginePropertyControl.de.resx" />
+    <EmbeddedResource Include="Controls\Resources\ParallelSearchEnginePropertyControl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ParallelSearchEnginePropertyControl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\ParallelSearchEnginePropertyControl.ru.resx" />
+    <EmbeddedResource Include="Controls\Resources\ParallelSearchEnginePropertyControl.uk.resx" />
+    <EmbeddedResource Include="Controls\Resources\ParseMethodEditor.de.resx" />
+    <EmbeddedResource Include="Controls\Resources\ProxyCheckerByUrlControl.de.resx" />
+    <EmbeddedResource Include="Controls\Resources\ProxyCheckerByUrlControl.uk.resx" />
+    <EmbeddedResource Include="Controls\Resources\GoogleEnginePropertyControl.uk.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\ProxyDetailsControl.de.resx" />
+    <EmbeddedResource Include="Controls\Resources\SearchControl.de.resx" />
+    <EmbeddedResource Include="Controls\Resources\SearchResult.de.resx" />
+    <EmbeddedResource Include="Controls\Resources\SearchSpeedControl.de.resx" />
+    <EmbeddedResource Include="Controls\Resources\SearchSpeedControl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SearchSpeedControl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\SearchSpeedControl.ru.resx" />
+    <EmbeddedResource Include="Controls\Resources\SearchSpeedControl.uk.resx" />
+    <EmbeddedResource Include="Controls\Resources\SelectFolderControl.de.resx" />
+    <EmbeddedResource Include="Controls\Resources\TabNameControl.de.resx" />
+    <EmbeddedResource Include="Controls\Resources\TabNameControl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TabNameControl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\TabNameControl.ru.resx" />
+    <EmbeddedResource Include="Controls\Resources\TabNameControl.uk.resx" />
+    <EmbeddedResource Include="Controls\Resources\TabSettingControl.de.resx" />
+    <EmbeddedResource Include="Controls\Resources\TaskManagerControl.de.resx" />
+    <EmbeddedResource Include="Controls\Resources\TaskManagerControl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TaskManagerControl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\TaskManagerControl.ru.resx" />
+    <EmbeddedResource Include="Controls\Resources\TaskManagerControl.uk.resx" />
+    <EmbeddedResource Include="Controls\Resources\ToolbarControl.de.resx" />
+    <EmbeddedResource Include="Controls\Resources\ToolbarControl.uk.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\TabSettingControl.uk.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\SelectFolderControl.uk.resx" />
+    <EmbeddedResource Include="Controls\Resources\SearchResult.ru.resx" />
+    <EmbeddedResource Include="Controls\Resources\SearchControl.uk.resx" />
+    <EmbeddedResource Include="Controls\Resources\ProxyDetailsControl.uk.resx" />
+    <EmbeddedResource Include="Controls\Resources\ParseMethodEditor.ru.resx" />
+    <EmbeddedResource Include="Controls\Resources\FolderSearchEngineControl.uk.resx" />
+    <EmbeddedResource Include="Controls\Resources\ExportSearchResultControl.uk.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\ExportSearchResultControl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ExportSearchResultControl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\ExportSearchResultControl.ru.resx" />
+    <EmbeddedResource Include="Controls\Resources\FolderSearchEngineControl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>FolderSearchEngineControl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\FolderSearchEngineControl.ru.resx" />
+    <EmbeddedResource Include="Controls\Resources\GoogleEnginePropertyControl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GoogleEnginePropertyControl.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\GoogleEnginePropertyControl.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\ParseMethodEditor.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ParseMethodEditor.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\ParseMethodEditor.uk.resx" />
+    <EmbeddedResource Include="Controls\Resources\ProxyCheckerByUrlControl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ProxyCheckerByUrlControl.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\ProxyCheckerByUrlControl.ru.resx" />
+    <EmbeddedResource Include="Controls\Resources\ProxyDetailsControl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ProxyDetailsControl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\ProxyDetailsControl.ru.resx" />
+    <EmbeddedResource Include="Controls\Resources\SearchControl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SearchControl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\SearchControl.ru.resx" />
+    <EmbeddedResource Include="Controls\Resources\SearchResult.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SearchResult.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\SearchResult.uk.resx" />
+    <EmbeddedResource Include="Controls\Resources\SelectFolderControl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SelectFolderControl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\SelectFolderControl.ru.resx" />
+    <EmbeddedResource Include="Controls\Resources\TabSettingControl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TabSettingControl.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\TabSettingControl.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\ToolbarControl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ToolbarControl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\ToolbarControl.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\UrlListPropertyControl.de.resx" />
+    <EmbeddedResource Include="Controls\Resources\UrlListPropertyControl.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>UrlListPropertyControl.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Resources\UrlListPropertyControl.ru.resx" />
+    <EmbeddedResource Include="Controls\Resources\UrlListPropertyControl.uk.resx" />
+    <EmbeddedResource Include="Properties\Resources.de.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.ru.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.uk.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Service References\GeoIPService\geoipservice.wsdl" />
+    <None Include="Service References\GeoIPService\ProxySearch.Console.GeoIPService.GeoIP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\GeoIPService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GeoIPService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GeoIPService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\GeoIPService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProxySearch.Engine\ProxySearch.Engine.csproj">
+      <Project>{eb06f887-3a1f-4473-a69f-1bfd6a1f361b}</Project>
+      <Name>ProxySearch.Engine</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Chrome.png" />
+    <Resource Include="Images\Firefox.png" />
+    <Resource Include="Images\InternerExplorer.gif" />
+    <Resource Include="Images\Safari.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Opera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Measure.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\BlackList.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\world128x128.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\filter.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeleteRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\whitepaper.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SHDocVw">
+      <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\Resources\ActionInvokerControl.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

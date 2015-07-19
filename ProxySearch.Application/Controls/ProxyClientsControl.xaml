@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="ProxySearch.Console.Controls.ProxyClientsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:controls="clr-namespace:ProxySearch.Console.Controls"
+             mc:Ignorable="d" Name="ProxyClients" >
+    <ItemsControl ItemsSource="{Binding ElementName=ProxyClients, Path=SelectedClients}">
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <StackPanel Orientation="Horizontal"/>
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+        <ItemsControl.ItemTemplate>
+            <DataTemplate>
+                <controls:ProxyClientControl ProxyClient="{Binding}" Margin="2,2,2,2" ProxyInfo="{Binding ElementName=ProxyClients, Path=ProxyInfo}" />
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+</UserControl>

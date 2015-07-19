@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="ProxySearch.Console.Controls.AboutControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"              
+             mc:Ignorable="d" 
+             xmlns:controls="clr-namespace:ProxySearch.Console.Controls"
+             xmlns:resources="clr-namespace:ProxySearch.Console.Controls.Resources" Name="About">
+    <controls:BackControl DataContext="{Binding ElementName=About}">
+        <controls:BackControl.Content>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <controls:WatermarkControl Grid.Row="0" />
+                <controls:WatermarkControl Grid.Row="3" />
+
+                <Button Grid.Row="1" Click="HomePage" Content="{Binding Path=ProgramName, Mode=OneWay}" Margin="0,0,0,10">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <TextBlock Text="{TemplateBinding Content}" Cursor="Hand" Foreground="Green" FontSize="25" HorizontalAlignment="Center" />
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <TextBlock HorizontalAlignment="Center" Grid.Row="2" FontSize="16" Text="{x:Static resources:AboutControl.HelpUsToMakeProxySearcherBetter}" Margin="0,0,0,10"/>
+                <Button  HorizontalAlignment="Center" Grid.Row="3" Content="{x:Static resources:AboutControl.LeaveYourFeedback}" Click="LeaveYourFeedback">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <TextBlock Text="{TemplateBinding Content}" FontSize="20"  Cursor="Hand" Foreground="Blue" />
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="5" Margin="0,0,20,20">
+                    <Button   Click="ProxySearchNews" Content="{x:Static resources:AboutControl.News}" Margin="0, 0, 10, 0">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <TextBlock Text="{TemplateBinding Content}" Cursor="Hand" Foreground="Blue" />
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button Click="Tickets" Content="{x:Static resources:AboutControl.Tickets}" Margin="0, 0, 10, 0">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <TextBlock Text="{TemplateBinding Content}" Cursor="Hand" Foreground="Blue" />
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Button Click="Donate" Content="{x:Static resources:AboutControl.Donate}">
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <TextBlock Text="{TemplateBinding Content}" Cursor="Hand" Foreground="Blue" />
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </controls:BackControl.Content>
+    </controls:BackControl>
+</UserControl>

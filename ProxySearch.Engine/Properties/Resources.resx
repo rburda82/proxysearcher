@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Anonymous" xml:space="preserve">
+    <value>Anonymous</value>
+  </data>
+  <data name="AnonymousDetails" xml:space="preserve">
+    <value>This proxy type hides your ip, but proxy usage could be detected easily. 
+Never transfer secure data with public proxy.</value>
+  </data>
+  <data name="CannotDownloadContent" xml:space="preserve">
+    <value>Cannot download content of '{0}'. Probably you don't have internet connection or '{0}' is blocked for your network. If it's blocked then go to Tools-&gt;Properties and change proxy checker 'By Url' to 'By Url and Keywords' (this checked type is especially for blocked sites).</value>
+  </data>
+  <data name="CannotVerify" xml:space="preserve">
+    <value>Cannot verify</value>
+  </data>
+  <data name="CannotVerifyDetails" xml:space="preserve">
+    <value>Unfortunately we cannot detect type of this proxy. 
+Probably it is offline or blocks our test service.
+You still able to use this proxy on your own risk.
+Never transfer secure data with public proxy.</value>
+  </data>
+  <data name="ChangesContent" xml:space="preserve">
+    <value>Changes content</value>
+  </data>
+  <data name="ChangesContentDetails" xml:space="preserve">
+    <value>During detection type of this proxy downloaded content was changed. 
+Most of all this proxy cannot be used free, it could infect your PC with viruses 
+or provide some commercial. Try to avoid usage proxy of this type.
+Never transfer secure data with public proxy.</value>
+  </data>
+  <data name="HighAnonymous" xml:space="preserve">
+    <value>High Anonymous</value>
+  </data>
+  <data name="HighAnonymousDetails" xml:space="preserve">
+    <value>This proxy type hides your ip and proxy usage cannot be detected easily. 
+Some methods could detect proxy usage, but they dont give 100% guarantee 
+that proxy usage will be detected. It is safest type of public proxy.
+Never transfer secure data with public proxy.</value>
+  </data>
+  <data name="InvalidHttpResponseFromSocksProxy" xml:space="preserve">
+    <value>Invalid http response from socks proxy</value>
+  </data>
+  <data name="IPRegexKey" xml:space="preserve">
+    <value>&lt;ipregex&gt;</value>
+  </data>
+  <data name="PortRegexKey" xml:space="preserve">
+    <value>&lt;portregex&gt;</value>
+  </data>
+  <data name="ProxyPropertyCannotBeNull" xml:space="preserve">
+    <value>Proxy property cannot be null.</value>
+  </data>
+  <data name="ProxyTypeDetectorGuid" xml:space="preserve">
+    <value>23154081-CFE8-4AC3-A530-142CB55C486D</value>
+  </data>
+  <data name="ProxyTypeDetectorUrlFormat" xml:space="preserve">
+    <value>http://proxysearcher.sourceforge.net/DetectProxyTypeV2.php?ip={0}&amp;port={1}&amp;type={2}&amp;param={3}</value>
+  </data>
+  <data name="Socks4" xml:space="preserve">
+    <value>Socks v4</value>
+  </data>
+  <data name="Socks4Details" xml:space="preserve">
+    <value>This proxy type is working on transport layer of TCP/IP protocol and supports v4 of Socks proxy</value>
+  </data>
+  <data name="Socks5" xml:space="preserve">
+    <value>Socks v5</value>
+  </data>
+  <data name="Socks5Details" xml:space="preserve">
+    <value>This proxy type is working on transport layer of TCP/IP protocol and supports v5 of Socks proxy without authentication</value>
+  </data>
+  <data name="SpeedTestUrl" xml:space="preserve">
+    <value>http://proxysearcher.sourceforge.net/Bandwidth</value>
+  </data>
+  <data name="TooManyRedirectsWasRequestedByServer" xml:space="preserve">
+    <value>Too many redirects was requested by server</value>
+  </data>
+  <data name="Transparent" xml:space="preserve">
+    <value>Transparent</value>
+  </data>
+  <data name="TransparentDetails" xml:space="preserve">
+    <value>This proxy type doesn't hide your ip and proxy usage could be detected easily. 
+It is the worst proxy type. Never transfer secure data with public proxy.</value>
+  </data>
+  <data name="UnableToResolveProxyHostnameFormat" xml:space="preserve">
+    <value>Unable to resolve proxy hostname '{0}' to a valid IP address.</value>
+  </data>
+  <data name="Unchecked" xml:space="preserve">
+    <value>Unchecked</value>
+  </data>
+  <data name="UncheckedDetails" xml:space="preserve">
+    <value>Ready for test</value>
+  </data>
+  <data name="UnsupportedHttpProxyType" xml:space="preserve">
+    <value>Unsupported http proxy type</value>
+  </data>
+  <data name="UnsupportedSocksProxyType" xml:space="preserve">
+    <value>Unsupported socks proxy type</value>
+  </data>
+  <data name="HttpProxyType" xml:space="preserve">
+    <value>HTTP</value>
+  </data>
+  <data name="SocksProxyType" xml:space="preserve">
+    <value>SOCKS</value>
+  </data>
+  <data name="CheckingProxiesFormat" xml:space="preserve">
+    <value>Checking proxies: {0}</value>
+  </data>
+  <data name="CheckingProxyIfItWorks" xml:space="preserve">
+    <value>Checking proxy if it works</value>
+  </data>
+  <data name="ProxySearching" xml:space="preserve">
+    <value>Searching proxies</value>
+  </data>
+  <data name="DownloadingFormat" xml:space="preserve">
+    <value>Downloading '{0}'.</value>
+  </data>
+  <data name="SearchingInFolderFormat" xml:space="preserve">
+    <value>Searching in folder '{0}'.</value>
+  </data>
+  <data name="ProxyCheckingIfAliveFormat" xml:space="preserve">
+    <value>{0} - checking if alive</value>
+  </data>
+  <data name="ProxyDeterminingLocationFormat" xml:space="preserve">
+    <value>{0} - determining proxy location</value>
+  </data>
+  <data name="ProxyDeterminingProxyType" xml:space="preserve">
+    <value>{0} - determining proxy type</value>
+  </data>
+  <data name="ProxyGotFirstResponseFormat" xml:space="preserve">
+    <value>{0} - got first response</value>
+  </data>
+  <data name="ConfiguringProxyChecker" xml:space="preserve">
+    <value>Configuring proxy checker</value>
+  </data>
+  <data name="ProxyDownloadingFormat" xml:space="preserve">
+    <value>{0} - proxy downloading '{1}'</value>
+  </data>
+  <data name="OpeningConnectionFormat" xml:space="preserve">
+    <value>{0} - opening connection</value>
+  </data>
+  <data name="WaitUntilProxyCheckerIsConfiguredFormat" xml:space="preserve">
+    <value>{0} - wait until proxy checker is configured</value>
+  </data>
+  <data name="ConfigureProviderOfProxyDetails" xml:space="preserve">
+    <value>Configure provider of proxy details</value>
+  </data>
+  <data name="DetermineCurrentIPAddress" xml:space="preserve">
+    <value>Determine current IP address</value>
+  </data>
+  <data name="WaitUntilProxyDetailsProviderConfiguredFormat" xml:space="preserve">
+    <value>{0} - Wait until proxy details provider configured</value>
+  </data>
+  <data name="DetectMyIPUrl" xml:space="preserve">
+    <value>http://proxysearcher.sourceforge.net/MyIP.php</value>
+  </data>
+  <data name="ProxyTypeDetectorUrlFormat2" xml:space="preserve">
+    <value>http://proxysearcher.sourceforge.net/DetectProxyTypeV2.php?ip={0}&amp;port={1}&amp;type={2}&amp;myip={3}&amp;param={4}</value>
+  </data>
+  <data name="SynchronizationTask" xml:space="preserve">
+    <value>Synchronization task</value>
+  </data>
+</root>

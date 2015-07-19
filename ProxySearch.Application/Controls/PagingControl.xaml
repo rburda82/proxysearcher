@@ -1,0 +1,102 @@
+﻿<UserControl x:Class="ProxySearch.Console.Controls.PagingControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:converters="clr-namespace:ProxySearch.Console.Code.Converters"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="285" Name="Paging">
+    <UserControl.Resources>
+        <converters:PagingEnabledConverter x:Key="pagingEnabledConverter" />
+        <converters:PageCountMultiConverter x:Key="pageCountMultiConverter" />
+        <converters:PagingButtonEnabledMultiConverter x:Key="pagingButtonEnabledMultiConverter" />
+    </UserControl.Resources>
+    <Grid DataContext="{Binding ElementName=Paging, Path=Count}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.Resources>
+            <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Converter={StaticResource pagingEnabledConverter}}" Value="False">
+                        <Setter Property="Button.IsEnabled" Value="False" />
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+            <Style TargetType="TextBox" BasedOn="{StaticResource ReadOnlyTextBox}">
+              
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+                <Setter Property="HorizontalContentAlignment" Value="Center" />                
+            </Style>
+        </Grid.Resources>
+
+        <Button Name="GoBeginButton" Grid.Column="1" Content="&lt;&lt;" Width="40" Margin="0,0,5,0" Click="GoTop">
+            <Button.IsEnabled>
+                <MultiBinding Converter="{StaticResource pagingButtonEnabledMultiConverter}" ConverterParameter="Top">
+                    <Binding ElementName="Paging" Path="Count" />
+                    <Binding ElementName="Paging" Path="Page" />
+                    <Binding ElementName="Paging" Path="PageSize" />
+                </MultiBinding>
+            </Button.IsEnabled>
+        </Button>
+        <Button Name="GoLeftButton" Grid.Column="2" Content="&lt;" Width="40" Margin="0,0,5,0" Click="GoLeft">
+            <Button.IsEnabled>
+                <MultiBinding Converter="{StaticResource pagingButtonEnabledMultiConverter}" ConverterParameter="Left">
+                    <Binding ElementName="Paging" Path="Count" />
+                    <Binding ElementName="Paging" Path="Page" />
+                    <Binding ElementName="Paging" Path="PageSize" />
+                </MultiBinding>
+            </Button.IsEnabled>
+        </Button>
+        <TextBox x:Name="CurrentPageTextBox" Grid.Column="3" Width="40" Margin="0,0,5,0" 
+                 Text="{Binding ElementName=Paging, Path=Page, Mode=TwoWay, TargetNullValue={x:Static system:String.Empty}, UpdateSourceTrigger=Explicit}" KeyUp="GoPage">            
+            <TextBox.Style>
+                <Style TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Converter={StaticResource pagingEnabledConverter}}" Value="True">
+                            <Setter Property="TextBox.IsReadOnly" Value="False" />
+                            <Setter Property="TextBox.Background" Value="Transparent" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+        <Label Grid.Column="4">/</Label>
+        <TextBox Name="PageCountTextBox" Grid.Column="5" Width="40" Margin="0,0,5,0" IsReadOnly="True">
+            <TextBox.Text>
+                <MultiBinding Converter="{StaticResource pageCountMultiConverter}" Mode="OneWay">
+                    <Binding ElementName="Paging" Path="Count" />
+                    <Binding ElementName="Paging" Path="PageSize" />
+                </MultiBinding>
+            </TextBox.Text>
+        </TextBox>
+        <Button Name="GoRightButton" Grid.Column="6" Content="&gt;" Width="40" Margin="0,0,5,0" Click="GoRight">
+            <Button.IsEnabled>
+                <MultiBinding Converter="{StaticResource pagingButtonEnabledMultiConverter}" ConverterParameter="Right">
+                    <Binding ElementName="Paging" Path="Count" />
+                    <Binding ElementName="Paging" Path="Page" />
+                    <Binding ElementName="Paging" Path="PageSize" />
+                </MultiBinding>
+            </Button.IsEnabled>
+        </Button>
+        <Button Name="GoEndButton" Grid.Column="7" Content="&gt;&gt;" Width="40" Click="GoBottom">
+            <Button.IsEnabled>
+                <MultiBinding Converter="{StaticResource pagingButtonEnabledMultiConverter}" ConverterParameter="Bottom">
+                    <Binding ElementName="Paging" Path="Count" />
+                    <Binding ElementName="Paging" Path="Page" />
+                    <Binding ElementName="Paging" Path="PageSize" />
+                </MultiBinding>
+            </Button.IsEnabled>
+        </Button>
+    </Grid>
+</UserControl>

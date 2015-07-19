@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Anonymous" xml:space="preserve">
+    <value>Анонімний</value>
+  </data>
+  <data name="AnonymousDetails" xml:space="preserve">
+    <value>Цей тип проксі ховає вашу адресу але використання проксі може бути легко визначено. 
+Ніколи не передевайте особисті дані через публічні проксі.</value>
+  </data>
+  <data name="CannotDownloadContent" xml:space="preserve">
+    <value>Неможливо скачати вміст сторінки '{0}'. Можливо у Вас немає інтернет з'єдання або сторінка '{0}' заблокована в Вашій мережі. Якщо сторінка заблокована тоді відкрийте Інструменти-&gt;Налаштування і змініть метод перевірки  'За адресою' на 'За адресою і ключовими словами' (цей метод перевірки спеціально призначений для роботи з заблокованими сайтами).</value>
+  </data>
+  <data name="CannotVerify" xml:space="preserve">
+    <value>Не визначений</value>
+  </data>
+  <data name="CannotVerifyDetails" xml:space="preserve">
+    <value>На жаль визначити тип проксі в даний момент неможливо. Можливо він не працює в даний момент часу або блоку наш тестовий сервіс. 
+Тим не менше даний проксі можна використовувати. Ніколи не передевайте особисті дані через публічні проксі.</value>
+  </data>
+  <data name="ChangesContent" xml:space="preserve">
+    <value>Змінює вміст</value>
+  </data>
+  <data name="ChangesContentDetails" xml:space="preserve">
+    <value>Під час визначення типу проксі скачаний вміст відрізняється від очікуваного. Можливо цей проксі платний, містить віруси або пропонує рекламу.
+Постарайтеся не використовувати проксі цього типу.
+Ніколи не передевайте особисті дані через публічні проксі.</value>
+  </data>
+  <data name="CheckingProxiesFormat" xml:space="preserve">
+    <value>Перевіряються проксі: {0}</value>
+  </data>
+  <data name="CheckingProxyIfItWorks" xml:space="preserve">
+    <value>Визначається працездатність проксі</value>
+  </data>
+  <data name="ConfigureProviderOfProxyDetails" xml:space="preserve">
+    <value>Налаштовується постачальник деталей проксі</value>
+  </data>
+  <data name="ConfiguringProxyChecker" xml:space="preserve">
+    <value>Налаштовується метод перевірки проксі</value>
+  </data>
+  <data name="DetermineCurrentIPAddress" xml:space="preserve">
+    <value>Визначається поточна IP адреса</value>
+  </data>
+  <data name="DownloadingFormat" xml:space="preserve">
+    <value>Завантажується '{0}'</value>
+  </data>
+  <data name="HighAnonymous" xml:space="preserve">
+    <value>Елітний</value>
+  </data>
+  <data name="HighAnonymousDetails" xml:space="preserve">
+    <value>Цей тип проксі ховає Вашу інтернет адресу і використання проксі не може бути легко встановлено.
+Деякі методи можуть визначити використання проксі, але вони не дають 100% гарантіх правильності визначення. Це найкращий тип публічного проксі.
+Ніколи не передевайте особисті дані через публічні проксі.</value>
+  </data>
+  <data name="InvalidHttpResponseFromSocksProxy" xml:space="preserve">
+    <value>Неправильна http відповідь від socks проксі</value>
+  </data>
+  <data name="OpeningConnectionFormat" xml:space="preserve">
+    <value>{0} - відкривається з'єднання</value>
+  </data>
+  <data name="ProxyCheckingIfAliveFormat" xml:space="preserve">
+    <value>{0} - визначається працездатність</value>
+  </data>
+  <data name="ProxyDeterminingLocationFormat" xml:space="preserve">
+    <value>{0} - визначається місцерозташування</value>
+  </data>
+  <data name="ProxyDeterminingProxyType" xml:space="preserve">
+    <value>{0} - визначається тип проксі</value>
+  </data>
+  <data name="ProxyDownloadingFormat" xml:space="preserve">
+    <value>{0} - проксі завантажує '{1}'</value>
+  </data>
+  <data name="ProxyGotFirstResponseFormat" xml:space="preserve">
+    <value>{0} - отримана перша відповідь</value>
+  </data>
+  <data name="ProxyPropertyCannotBeNull" xml:space="preserve">
+    <value>Proxy властивість не може дорівнювати null</value>
+  </data>
+  <data name="ProxySearching" xml:space="preserve">
+    <value>Шукаються проксі</value>
+  </data>
+  <data name="SearchingInFolderFormat" xml:space="preserve">
+    <value>Шукається в папці '{0}'</value>
+  </data>
+  <data name="Socks4Details" xml:space="preserve">
+    <value>Цей тип проксі працює на транспортному рівні стека протоколів TCP/IP і підтримує четверту версію Socks проксі.
+Ніколи не передевайте особисті дані через публічні проксі.</value>
+  </data>
+  <data name="Socks5Details" xml:space="preserve">
+    <value>Цей тип проксі працює на транспортному рівні стека протоколів TCP/IP і підтримує п'яту версію Socks проксі.
+Ніколи не передевайте особисті дані через публічні проксі.</value>
+  </data>
+  <data name="SynchronizationTask" xml:space="preserve">
+    <value>Синхронізаційна задача</value>
+  </data>
+  <data name="TooManyRedirectsWasRequestedByServer" xml:space="preserve">
+    <value>Надто багато перенаправлень запрошено сервером</value>
+  </data>
+  <data name="Transparent" xml:space="preserve">
+    <value>Прозорий</value>
+  </data>
+  <data name="TransparentDetails" xml:space="preserve">
+    <value>Цей тип проксі не ховає Вашу адресу і використання проксі може бути легко встановлено. 
+Це найгірший тип проксі. Ніколи не передевайте особисті дані через публічні проксі.</value>
+  </data>
+  <data name="UnableToResolveProxyHostnameFormat" xml:space="preserve">
+    <value>Неможливо визначити валідну інтернет адресу по хосту '{0}'.</value>
+  </data>
+  <data name="Unchecked" xml:space="preserve">
+    <value>Не перевірений</value>
+  </data>
+  <data name="UncheckedDetails" xml:space="preserve">
+    <value>Готовий до перевірки</value>
+  </data>
+  <data name="UnsupportedHttpProxyType" xml:space="preserve">
+    <value>Цей тип http проксі не підтримується</value>
+  </data>
+  <data name="UnsupportedSocksProxyType" xml:space="preserve">
+    <value>Цей тип socks проксі не підтримується</value>
+  </data>
+  <data name="WaitUntilProxyCheckerIsConfiguredFormat" xml:space="preserve">
+    <value>{0} - очікується налаштований метод перевірки проксі</value>
+  </data>
+  <data name="WaitUntilProxyDetailsProviderConfiguredFormat" xml:space="preserve">
+    <value>{0} - Очікується постачальник деталей проксі</value>
+  </data>
+</root>
